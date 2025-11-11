@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+        "id": 1,
+        "name": "Apple",
+        "price": 1.90,
+        "imgUrl": "/img/apple.png"
+    },
+    {
+      "id": 2,
+      "name": "Banana",
+      "price": 1.20,
+      "imgUrl": "/img/banana.png"
+    },
+    {
+      "id": 3,
+      "name": "Orange",
+      "price": 2.05,
+      "imgUrl": "/img/orange.png"
+    },
+    {
+      "id": 4,
+      "name": "Grapes",
+      "price": 7.49,
+      "imgUrl": "/img/grapes.png"
+    }
+  ]
+}
