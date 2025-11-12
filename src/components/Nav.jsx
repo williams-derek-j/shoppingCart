@@ -22,9 +22,9 @@ export default function Nav( { cart, showCart } ) {
             <button onClick={() => showCart}>
                 <div className="cart icon">
                     {cartIcon}
-                    <div className="cart bubble">
+                    { total > 0 && <div className="cart bubble">
                         <span>{total}</span>
-                    </div>
+                    </div>}
                 </div>
             </button>
         </nav>
