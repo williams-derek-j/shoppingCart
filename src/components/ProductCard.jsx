@@ -10,7 +10,7 @@ export default function ProductCard({ name, price, img, handleBuy }) {
             <h3>${price}</h3>
             <label htmlFor="quantity">Quantity:</label>
             <input required ref={quantity} id="quantity" type="number" className="input quantity" min="1" max="9" defaultValue="1"/>
-            <button onClick={() => { handleBuy({ name: name, price: price, quantity: quantity.current.value }) }}>Buy</button>
+            <button onClick={() => { handleBuy({ name: name, price: price, quantity: Number(quantity.current.value) }) }}>Buy</button>
         </div>
     )
 }

@@ -6,7 +6,6 @@ import App from './App.jsx'
 import Store from './pages/Store.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
-import Cart from './pages/Cart.jsx'
 const router = createBrowserRouter([
     {
         path: '/',
@@ -24,10 +23,6 @@ const router = createBrowserRouter([
             {
                 path: '/contact',
                 element: <Contact />,
-            },
-            {
-                path: '/cart',
-                element: <Cart />
             },
         ]
     },
