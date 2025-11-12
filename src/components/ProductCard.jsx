@@ -14,7 +14,11 @@ export default function ProductCard({ id, name, price, img, handleBuy, handleRem
                 <h3>${price}</h3>
                 <div className="container quantity">
                     <label htmlFor="quantity">Quantity:</label>
-                    <input required ref={quantity} id="quantity" type="number" className="input quantity" min="1" max="9" defaultValue="1"/>
+                    <input required ref={quantity} id="quantity" type="number" className="input quantity" min="1" max="9" defaultValue="1" onChange={() => {
+                        if (inCart) {
+                            handleBuy({ id: id, name: name, price: price, quantity: Number(quantity.current.value) })
+                        }
+                    }}/>
                 </div>
                 <div className="container button">
                     {inCart === false && <button className="button buyItem" onClick={() => {
