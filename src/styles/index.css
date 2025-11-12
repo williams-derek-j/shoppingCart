@@ -139,6 +139,8 @@ body {
   --gap-5: calc(var(--gap-1) * 5);
   --gap-1: var(--fs-0_5);
 
+  --border-radius-1: 20%;
+
   --flow-spacer_0_25: var(--gap-0_5);
   --flow-spacer_0_5: var(--gap-1);
   --flow-spacer: var(--gap-2);

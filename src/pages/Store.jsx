@@ -14,11 +14,19 @@ export default function Store() {
         setCart([...old, item])
     }
 
+    function handleRemove(item) {
+        console.log('handleRemove ran, item:', item, ' cart: ', cart)
+
+        const filtered = cart.filter((oldItem) => oldItem.id !== item.id)
+
+        setCart([...filtered])
+    }
+
     return (
         <>
             { isPending && <h2>Loading...</h2> }
             { error && <h2>error</h2>}
-            { inventory && <ProductList inventory={inventory} handleBuy={handleBuy} /> }
+            { inventory && <ProductList inventory={inventory} handleBuy={handleBuy} handleRemove={handleRemove} /> }
         </>
     )
 }

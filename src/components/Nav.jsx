@@ -19,10 +19,10 @@ export default function Nav( { cart, showCart } ) {
             <NavLink to={`/`}>Store</NavLink>
             <NavLink to={`/about`}>About</NavLink>
             <NavLink to={`/contact`}>Contact</NavLink>
-            <button onClick={() => showCart}>
-                <div className="cart icon">
+            <button className="button cart" onClick={() => showCart}>
+                <div className="icon cart">
                     {cartIcon}
-                    { total > 0 && <div className="cart bubble">
+                    { total > 0 && <div className="bubble cart">
                         <span>{total}</span>
                     </div>}
                 </div>

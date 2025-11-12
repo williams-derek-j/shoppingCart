@@ -1,0 +1,15 @@
+.productCard .container.tongue {
+    padding: var(--gap-1);
+}
+
+.productCard .container.button {
+    width: fit-content;
+
+    margin-left: auto;
+
+    padding: var(--gap-0_5);
+
+    background: var(--clr-accent-500);
+
+    border-radius: var(--border-radius-1);
+}

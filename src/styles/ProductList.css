@@ -2,3 +2,11 @@
     display: flex;
     flex-direction: row;
 }
+
+.removeItem {
+    background: var(--clr-accent-500);
+
+    margin-left: auto;
+
+    border-radius: 20%;
+}
