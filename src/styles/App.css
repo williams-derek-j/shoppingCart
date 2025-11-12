@@ -6,3 +6,12 @@
 
   font-family: var(--ff-primary);
 }
+
+.content {
+  max-width: 100%;
+  min-height: 100%;
+}
+
+.content > .cart {
+  width: 20%;
+}

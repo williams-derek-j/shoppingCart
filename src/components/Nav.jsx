@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import '../styles/Nav.css'
 
-export default function Nav( { cart, showCart } ) {
-    let total = cart.reduce((sum, item) => {
-        return sum += item.quantity
+export default function Nav( { cart, handleShowCart } ) {
+    let total = cart.reduce((sum, product) => {
+        return sum += product.quantity
     }, 0)
 
     const cartIcon = (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -19,12 +19,14 @@ export default function Nav( { cart, showCart } ) {
             <NavLink to={`/`}>Store</NavLink>
             <NavLink to={`/about`}>About</NavLink>
             <NavLink to={`/contact`}>Contact</NavLink>
-            <button className="button cart" onClick={() => showCart}>
+            <button className="button cart" onClick={() => handleShowCart()}>
                 <div className="icon cart">
-                    {cartIcon}
-                    { total > 0 && <div className="bubble cart">
-                        <span>{total}</span>
-                    </div>}
+                    { cartIcon }
+                    { total > 0 &&
+                        <div className="bubble cart">
+                            <span>{ total }</span>
+                        </div>
+                    }
                 </div>
             </button>
         </nav>

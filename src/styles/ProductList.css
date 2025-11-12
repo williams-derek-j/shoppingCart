@@ -3,7 +3,7 @@
     flex-direction: row;
 }
 
-.removeItem {
+.removeProduct {
     background: var(--clr-accent-500);
 
     margin-left: auto;

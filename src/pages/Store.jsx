@@ -1,26 +1,28 @@
+// import { useState } from "react";
 import { useOutletContext } from 'react-router';
 import useFetch from '../hooks/useFetch';
 import ProductList from '../components/ProductList';
+// import Cart from '../components/Cart';
 
 export default function Store() {
     const { data: inventory, isPending, error } = useFetch("http://localhost:8000/items");
-    const { cart, setCart } = useOutletContext();
+    const { /*cart, setCart,*/ handleBuy, handleRemove } = useOutletContext();
 
-    function handleBuy(item) {
-        console.log('handleBuy ran, item:', item, ' cart: ', cart)
-
-        const old = cart.filter((oldItem) => oldItem.id !== item.id)
-
-        setCart([...old, item])
-    }
-
-    function handleRemove(item) {
-        console.log('handleRemove ran, item:', item, ' cart: ', cart)
-
-        const filtered = cart.filter((oldItem) => oldItem.id !== item.id)
-
-        setCart([...filtered])
-    }
+    // function handleBuy(product) {
+    //     console.log('handleBuy ran, product:', product, ' cart: ', cart)
+    //
+    //     const old = cart.filter((oldProduct) => oldProduct.id !== product.id)
+    //
+    //     setCart([...old, product])
+    // }
+    //
+    // function handleRemove(product) {
+    //     console.log('handleRemove ran, product:', product, ' cart: ', cart)
+    //
+    //     const filtered = cart.filter((oldProduct) => oldProduct.id !== product.id)
+    //
+    //     setCart([...filtered])
+    // }
 
     return (
         <>

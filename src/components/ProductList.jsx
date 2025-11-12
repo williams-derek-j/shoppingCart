@@ -4,8 +4,8 @@ import '../styles/ProductList.css'
 export default function ProductList({ inventory, handleBuy, handleRemove }) {
     return (
         <div className="inventory container">
-            {inventory.map(item => (
-                <ProductCard key={item.id} id={item.id} name={item.name} price={item.price} img={item.imgUrl} handleBuy={handleBuy} handleRemove={handleRemove} />
+            {inventory.map(product => (
+                <ProductCard key={product.id} id={product.id} name={product.name} price={product.price} img={product.imgUrl} handleBuy={handleBuy} handleRemove={handleRemove} />
             ))}
         </div>
     )
