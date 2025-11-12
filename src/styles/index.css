@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+#root {
+  --clr-primary-500: hsl(191, 60%, 40%);
+
+  --clr-accent-500: hsl(0, 82%, 61%);
+
+  --clr-neutral-1000: hsl(34, 78%, 0%);
+  --clr-neutral-900: hsl(34, 78%, 10%);
+  --clr-neutral-800: hsl(34, 78%, 20%);
+  --clr-neutral-700: hsl(34, 78%, 30%);
+  --clr-neutral-600: hsl(34, 78%, 40%);
+  --clr-neutral-400: hsl(34, 78%, 50%);
+  --clr-neutral-500: hsl(34, 78%, 60%);
+  --clr-neutral-300: hsl(34, 78%, 70%);
+  --clr-neutral-200: hsl(34, 78%, 80%);
+  --clr-neutral-100: hsl(34, 78%, 90%);
+  --clr-neutral-000: hsl(34, 78%, 100%);
+
+  --shadow-500: 0px 1px 8px var(--clr-neutral-900);
+
+  --ff-primary: sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-header: var(--ff-primary);
+  --ff-footer: var(--ff-primary);
+
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  --fs-0_25: calc(var(--fs-1) * 0.25);
+  --fs-0_5: calc(var(--fs-1) * 0.5);
+  --fs-0_75: calc(var(--fs-1) * 0.75);
+  --fs-0_875: calc(var(--fs-1) * 0.875);
+  --fs-1_125: calc(var(--fs-1) * 1.125);
+  --fs-1_25: calc(var(--fs-1) * 1.25);
+  --fs-1_3125: calc(var(--fs-1) * 1.3125);
+  --fs-1_5: calc(var(--fs-1) * 1.5);
+  --fs-1_75: calc(var(--fs-1) * 1.75);
+  --fs-2: calc(var(--fs-1) * 2);
+  --fs-2_25: calc(var(--fs-1) * 2.25);
+  --fs-2_5: calc(var(--fs-1) * 2.5);
+  --fs-2_75: calc(var(--fs-1) * 2.75);
+  --fs-3: calc(var(--fs-1) * 3);
+  --fs-3_25: calc(var(--fs-1) * 3.25);
+  --fs-3_5: calc(var(--fs-1) * 3.5);
+  --fs-3_75: calc(var(--fs-1) * 3.75);
+  --fs-4: calc(var(--fs-1) * 4);
+  --fs-4_25: calc(var(--fs-1) * 4.25);
+  --fs-4_5: calc(var(--fs-1) * 4.5);
+  --fs-4_75: calc(var(--fs-1) * 4.75);
+  --fs-5: calc(var(--fs-1) * 5);
+  --fs-1: 2rem;
+
+  --fs-small: var(--fs-0_75);
+  --fs-normal-smaller: var(--fs-1);
+  --fs-normal-bigger: var(--fs-1_25);
+  --fs-big: var(--fs-1_5);
+  --fs-biggest: var(--fs-1_75);
+
+  --fs-body: var(--fs-1);
+  --fs-header: var(--fs-2);
+  --fs-footer: var(--fs-2);
+
+  --gap-0_25: calc(var(--gap-1) * 0.25);
+  --gap-0_5: calc(var(--gap-1) * 0.5);
+  --gap-2: calc(var(--gap-1) * 2);
+  --gap-3: calc(var(--gap-1) * 3);
+  --gap-4: calc(var(--gap-1) * 4);
+  --gap-5: calc(var(--gap-1) * 5);
+  --gap-1: var(--fs-0_5);
+
+  --flow-spacer_0_25: var(--gap-0_5);
+  --flow-spacer_0_5: var(--gap-1);
+  --flow-spacer: var(--gap-2);
+
+  --aspect-portrait: 1 / 1.5;
+  --aspect-wide-portrait: 1 / 1.25;
+  --aspect-landscape: 1.5 / 1;
+
+  --screen-width-small: 600px;
+  --screen-width-medium: 1440px;
+  --screen-width-large: 1920px;
+
+  max-width: 100%;
+  min-height: 100%;
+
+  background: var(--clr-neutral-100);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  padding: var(--gap-1);
+
+  background: var(--clr-neutral-100);
+
+  box-shadow: var(--shadow-500);
+}
+
+nav > *:not(:first-child) {
+  margin-left: var(--gap-1);
+}
+
+nav > a:last-child {
+  margin-left: auto;
+}
+
+.active {
+  color: var(--clr-accent-500);
+  font-weight: var(--fw-bold);
+}
