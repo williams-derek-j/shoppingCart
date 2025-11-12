@@ -10,17 +10,17 @@ body {
 
   --clr-accent-500: hsl(0, 82%, 61%);
 
-  --clr-neutral-1000: hsl(34, 78%, 0%);
-  --clr-neutral-900: hsl(34, 78%, 10%);
-  --clr-neutral-800: hsl(34, 78%, 20%);
-  --clr-neutral-700: hsl(34, 78%, 30%);
-  --clr-neutral-600: hsl(34, 78%, 40%);
-  --clr-neutral-400: hsl(34, 78%, 50%);
-  --clr-neutral-500: hsl(34, 78%, 60%);
-  --clr-neutral-300: hsl(34, 78%, 70%);
-  --clr-neutral-200: hsl(34, 78%, 80%);
+  --clr-neutral-1000: hsl(34, 0%, 0%);
+  --clr-neutral-900: hsl(34, 04%, 10%);
+  --clr-neutral-800: hsl(34, 08%, 20%);
+  --clr-neutral-700: hsl(34, 18%, 30%);
+  --clr-neutral-600: hsl(34, 28%, 40%);
+  --clr-neutral-400: hsl(34, 38%, 50%);
+  --clr-neutral-500: hsl(34, 48%, 60%);
+  --clr-neutral-300: hsl(34, 58%, 70%);
+  --clr-neutral-200: hsl(34, 68%, 80%);
   --clr-neutral-100: hsl(34, 78%, 90%);
-  --clr-neutral-000: hsl(34, 78%, 100%);
+  --clr-neutral-000: hsl(34, 88%, 100%);
 
   --shadow-500: 0px 1px 8px var(--clr-neutral-900);
 
@@ -31,8 +31,10 @@ body {
   --ff-footer: var(--ff-primary);
 
   --fw-regular: 400;
-  --fw-semi-bold: 500;
+  --fw-semi-bold: 600;
   --fw-bold: 700;
+  --fw-bolder: 800;
+  --fw-boldest: 900;
 
   --fs-0_25: calc(var(--fs-1) * 0.25);
   --fs-0_5: calc(var(--fs-1) * 0.5);
@@ -103,6 +105,10 @@ nav {
 
   background: var(--clr-neutral-100);
 
+  color:var(--clr-neutral-1000);
+
+  font-weight: var(--fw-bolder);
+
   box-shadow: var(--shadow-500);
 }
 
@@ -114,7 +120,6 @@ nav > a:last-child {
   margin-left: auto;
 }
 
-.active {
+nav > .active {
   color: var(--clr-accent-500);
-  font-weight: var(--fw-bold);
 }
