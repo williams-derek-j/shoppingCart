@@ -9,7 +9,7 @@ function App() {
     return (
         <>
             <Nav cart={cart}/>
-            <Outlet cart={cart} setCart={setCart} />
+            <Outlet context={{ cart, setCart }} />
         </>
     )
 }
