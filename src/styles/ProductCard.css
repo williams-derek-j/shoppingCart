@@ -1,5 +1,5 @@
 .ProductCard {
-    width: fit-content;
+    width: 100%;
 
     border: var(--border-1);
     border-radius: var(--border-radius-1);
@@ -24,11 +24,22 @@
     background: var(--clr-neutral-050);
 }
 
-.ProductCard > img {
-    border-bottom: var(--border-1);
+.ProductCard > .ProductCardImgContainer {
+    width: 100%;
 
+    display: flex;
+    justify-content: center;
+
+    background: var(--clr-neutral-000);
+
+    border-bottom: var(--border-1);
+}
+
+.ProductCard > .ProductCardImgContainer > img {
     max-width: 384px;
     max-height: 384px;
+
+    align-self: center;
 }
 
 .ProductCard .container.tongue {
@@ -40,7 +51,7 @@
     gap: var(--gap-0_5);
 }
 
-.ProductCard .container.tongue > h2 {
+.ProductCard .container.tongue > h2.ProductCardLabel {
     margin-bottom: calc(var(--gap-0_5) * -1);
 
     text-align: center;
@@ -71,13 +82,13 @@
     justify-content: flex-end;
 }
 
-.ProductCard .container.tongue > .ProductCardQuantityContainer > label {
+.ProductCard .container.tongue > .ProductCardQuantityContainer > label.ProductCardQuantityLabel {
     margin-right: var(--gap-0_25);
 
     font-weight: var(--fw-semi-bold);
 }
 
-.ProductCard .container.tongue > .ProductCardQuantityContainer > input {
+.ProductCard .container.tongue > .ProductCardQuantityContainer > input.ProductCardQuantityInput {
     border-radius: var(--border-radius-1);
 
     font-weight: var(--fw-bold);
@@ -86,7 +97,7 @@
     background: var(--clr-neutral-000);
 }
 
-.ProductCard:nth-child(odd) .container.tongue > .ProductCardQuantityContainer > input {
+.ProductCard:nth-child(odd) .container.tongue > .ProductCardQuantityContainer > input.ProductCardQuantityInput {
     background: var(--clr-neutral-150);
 }
 
@@ -94,6 +105,7 @@
     width: fit-content;
 
     margin-left: auto;
+    margin-top: var(--gap-1);
 
     padding: var(--gap-0_5);
 
@@ -102,10 +114,13 @@
     border-radius: var(--border-radius-1);
 }
 
-button.ProductCardButtonBuy, button.ProductCardRemoveButton {
-    background: var(--clr-accent-500);
+.ProductCard .container.ProductCardButtonContainer:hover {
+    background: var(--clr-primary-100) !important;
+}
 
-    margin-left: auto;
+.ProductCard .buttonProduct {
+    line-height: var(--fs-h2);
 
-    border-radius: 20%;
+    font-size: var(--fs-headerSmaller);
+    font-weight: var(--fw-boldest);
 }

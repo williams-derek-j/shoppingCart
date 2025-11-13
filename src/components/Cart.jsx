@@ -15,7 +15,7 @@ export default function Cart({ className = '', cart, handleBuy, handleRemove }) 
                 ))}
             </div>
             <div className="container CartPriceContainer">
-                <h2 className="CartPriceLabel">TOTAL BEFORE TAXES:</h2>
+                <h2 className="CartPriceLabel">TOTAL BEFORE TAXES{"\u00A0".repeat(12)}</h2>
                 <h2 className="CartPrice">${priceTotal.toFixed(2)}</h2>
             </div>
         </div>

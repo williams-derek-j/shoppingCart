@@ -17,7 +17,9 @@ export default function ProductCard({ className='', id, name, price, img, inCart
 
     return (
         <div className={`${className}`}>
-            <img src={img}/>
+            <div className="container containerImg ProductCardImgContainer">
+                <img className="img ProductCardImg" src={img}/>
+            </div>
             <div className="container tongue">
                 <h2 className="ProductCardLabel">{name}</h2>
                 <h3 className="ProductCardPrice">${price}</h3>

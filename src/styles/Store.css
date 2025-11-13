@@ -1,15 +1,19 @@
 .storeInventory {
-    height: fit-content;
+    width: 100%;
+    /*height: fit-content;*/
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*flex-wrap: wrap;*/
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
 
     padding: var(--gap-1);
 
     gap: var(--gap-1);
 
-    background: var(--clr-primary-500);
+    background: var(--clr-primary-600);
 }
 
 .storeInventory img {

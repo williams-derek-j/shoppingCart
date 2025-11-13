@@ -43,7 +43,7 @@ function App() {
             <div className="content">
                 { isPending && <h2>Loading...</h2> }
                 { error && <h2>error</h2> }
-                { inventory && <Outlet context={{ inventory, cartContents: cart, handleBuy, handleRemove }}/> }
+                { inventory && <Outlet context={{ inventory, cart, handleBuy, handleRemove }}/> }
                 { showCart && <Cart className="Cart" cart={ cart } handleBuy={ handleBuy } handleRemove={ handleRemove }/> }
             </div>
         </>

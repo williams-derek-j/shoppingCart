@@ -30,13 +30,5 @@
 
   justify-content: space-between;
 
-  background-color: var(--clr-primary-500);
-}
-
-button.buttonProduct {
-  background: var(--clr-accent-500);
-
-  margin-left: auto;
-
-  border-radius: 20%;
+  background-color: var(--clr-primary-600);
 }

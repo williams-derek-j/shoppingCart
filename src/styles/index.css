@@ -67,7 +67,12 @@ p, h1, h2 {
 }
 
 body {
-  --clr-primary-500: hsl(190, 18%, 56%);
+  --clr-primary-700: hsl(190, 18%, 50%);
+  --clr-primary-600: hsl(190, 27%, 67.5%);
+  --clr-primary-500: hsl(190, 36%, 75%);
+  --clr-primary-300: hsl(190, 54%, 87.5%);
+  --clr-primary-200: hsl(190, 72%, 87.5%);
+  --clr-primary-100: hsl(190, 90%, 87.5%);
 
   --clr-accent-500: hsl(0, 82%, 61%);
 
@@ -85,6 +90,8 @@ body {
   --clr-neutral-100: hsl(34, 78%, 90%);
   --clr-neutral-050: hsl(34, 78%, 95%);
   --clr-neutral-000: hsl(34, 88%, 100%);
+
+  --clr-highlight-500: #ccff00;
 
   --shadow-025: 0px 0.1px 1px var(--clr-neutral-700);
   --shadow-050: 0px 0.1px 4px var(--clr-neutral-700);

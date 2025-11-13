@@ -14,6 +14,7 @@
 @media (min-width: 0px) and (max-width: 576px) {
     .Cart {
         width: 100% !important;
+        min-width: 0 !important;
     }
 }
 
@@ -37,6 +38,8 @@
 .Cart h2 {
     display: inline-block;
 
+    align-self: center;
+
     font-size: var(--fs-h2);
     font-weight: var(--fw-bold);
 }
@@ -48,8 +51,22 @@
     font-weight: var(--fw-bolder);
 }
 
+.Cart h2.CartPriceLabel {
+    position: absolute;
+
+    text-decoration-line: underline;
+
+    width: 100%;
+}
+
 .Cart h2.CartPrice {
-    align-self: flex-end;
+    z-index: 1;
+
+    margin-left: auto;
 
     font-weight: var(--fw-boldest);
+
+    background: var(--clr-neutral-050);
+
+    border-radius: var(--border-radius-1);
 }
