@@ -13,6 +13,12 @@
 
 }
 
+@media (min-width: 0px) and (max-width: 576px) {
+  .content {
+    flex-direction: column !important;
+  }
+}
+
 .content {
   max-width: 100%;
   min-height: 100%;
@@ -27,7 +33,7 @@
   background-color: var(--clr-primary-500);
 }
 
-button.productButton {
+button.buttonProduct {
   background: var(--clr-accent-500);
 
   margin-left: auto;

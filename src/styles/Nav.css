@@ -21,15 +21,42 @@ nav {
     box-shadow: var(--shadow-200);
 }
 
+@media (min-width: 0px) and (max-width: 576px) {
+    nav {
+        width: 100% !important;
+
+        flex-direction: column !important;
+    }
+
+    nav > * {
+        margin: 0 !important;
+        align-self: center !important;
+    }
+
+    nav > *:not(:first-child) {
+        margin-top: var(--gap-0_25) !important;
+    }
+
+    nav > .CartToggle {
+        margin-top: var(--gap-1) !important;
+    }
+}
+
+@media (min-width: 577px) {
+    nav > *:not(:first-child) {
+        margin-left: var(--gap-1);
+    }
+}
+
 nav > a {
     text-shadow: var(--text-shadow-500);
 
     align-self: center;
 }
 
-nav > *:not(:first-child) {
-    margin-left: var(--gap-1);
-}
+/*nav > *:not(:first-child) {*/
+/*    margin-left: var(--gap-1);*/
+/*}*/
 
 /*nav > *:last-child {*/
 /*    margin-left: auto;*/
@@ -87,11 +114,16 @@ nav > *:last-child > .icon > .bubble > span {
     line-height: var(--fs-header);
 
     font-family: "Courier New", "sans-serif";
-    font-size: var(--fs-h2);
+    font-size: var(--fs-headerSmaller);
 }
 
 nav > *:last-child > .icon > .bubble > span.doubleDigit {
     width: 150%;
+    font-size: var(--fs-h2);
+}
+
+nav > *:last-child > .icon > .bubble > span.tripleDigit {
+    font-size: var(--fs-h3);
 }
 
 nav > .active {

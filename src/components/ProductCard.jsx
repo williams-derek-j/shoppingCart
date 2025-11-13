@@ -19,21 +19,21 @@ export default function ProductCard({ className='', id, name, price, img, inCart
         <div className={`${className}`}>
             <img src={img}/>
             <div className="container tongue">
-                <h2>{name}</h2>
-                <h3>${price}</h3>
-                <div className="container containerQuantity">
-                    <label htmlFor="quantity">Quantity</label>
-                    <input required ref={quantity} id="quantity" type="number" className="input setProductQuantity" min="1" defaultValue={quantityCurr} onChange={() => {
+                <h2 className="ProductCardLabel">{name}</h2>
+                <h3 className="ProductCardPrice">${price}</h3>
+                <div className="container ProductCardQuantityContainer">
+                    <label className="ProductCardQuantityLabel" htmlFor={`quantity${id}`}>Quantity:</label>
+                    <input required ref={quantity} id={`quantity${id}`} type="number" className="input ProductCardQuantityInput" min="1" defaultValue={quantityCurr} onChange={() => {
                         if (inCart) {
                             handleBuy({ id: id, name: name, price: price, quantity: Number(quantity.current.value) })
                         }
                     }}/>
                 </div>
-                <div className="container containerButton">
-                    {inCart === false && <button className="button productButton buyProductCard" onClick={() => {
+                <div className="container ProductCardButtonContainer">
+                    {inCart === false && <button className="button buttonProduct buttonProductBuy ProductCardButton ProductCardBuyButton" onClick={() => {
                         handleBuy({ id: id, name: name, price: price, quantity: Number(quantity.current.value) })
                     }}>Buy</button>}
-                    {inCart === true && <button className="button productButton removeProductCard" onClick={() => {
+                    {inCart === true && <button className="button buttonProduct buttonProductRemove ProductCardButton ProductCardRemoveButton" onClick={() => {
                         handleRemove({ id: id, name: name })
                         quantity.current.value = 1;
                     }}>X</button>}

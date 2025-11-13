@@ -19,12 +19,12 @@ export default function Nav( { cart, handleShowCart } ) {
             <NavLink to={`/`}>Store</NavLink>
             <NavLink to={`/about`}>About</NavLink>
             <NavLink to={`/contact`}>Contact</NavLink>
-            <button className="button cartToggle" onClick={() => handleShowCart()}>
-                <div className="icon cartIcon">
+            <button className="button CartToggle" onClick={() => handleShowCart()}>
+                <div className="icon CartIcon">
                     { cartIcon }
                     { total > 0 &&
-                        <div className="bubble cartIconBubble">
-                            <span className={ total >= 10 ? 'doubleDigit' : ''}>{ total }</span>
+                        <div className="bubble CartIconBubble">
+                            <span className={ total >= 10 && total <= 99 ? 'doubleDigit' : total >= 100 ? 'tripleDigit' : ''}>{ total }</span>
                         </div>
                     }
                 </div>
