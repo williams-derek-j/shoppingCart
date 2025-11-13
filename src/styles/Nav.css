@@ -1,4 +1,6 @@
 nav {
+    z-index: 1;
+
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -13,7 +15,9 @@ nav {
     font-size: var(--fs-header);
     font-weight: var(--fw-bolder);
 
-    box-shadow: var(--shadow-500);
+    border-bottom: var(--border-1);
+
+    box-shadow: var(--shadow-200);
 }
 
 nav > a {

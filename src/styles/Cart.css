@@ -4,6 +4,18 @@
     padding: var(--gap-1);
 
     background: var(--clr-neutral-300);
+
+    border-left: var(--border-1);
+
+    box-shadow: var(--shadow-050);
+}
+
+.cart > .CartProductContainer {
+    perspective: 0px;
+
+    /*overflow: clip;*/
+
+    background: var(--clr-neutral-700);
 }
 
 .cart > .cartPriceContainer {

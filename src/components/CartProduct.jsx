@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import '../styles/CartProduct.css'
 
 export default function CartProduct({ className='', id, name, price, quantityCurr, handleBuy, handleRemove }) {
-    const quantity = useRef(null);
+    const quantity = useRef(null)
 
     useEffect(() => {
         console.log('ProductCard rendered, currQ:', quantityCurr)
