@@ -8,13 +8,16 @@ export default function Cart({ className = '', cart, handleBuy, handleRemove }) 
 
     return (
         <div className={`${className} flow_0_25`}>
-            <span>CART:</span>
+            <h2>CART:</h2>
             <div className="container CartProductContainer">
                 {cart.map(product => (
                     <CartProduct className="CartProduct" key={product.id} id={product.id} name={product.name} price={product.price} quantityCurr={product.quantity} img={product.imgUrl} handleBuy={handleBuy} handleRemove={handleRemove} />
                 ))}
             </div>
-            <span style={{ display: 'inline-block' }}>TOTAL BEFORE TAXES: ${priceTotal.toFixed(2)}</span>
+            <div className="cartPriceContainer">
+                <h2 className="cartPriceLabel">TOTAL BEFORE TAXES:</h2>
+                <h2 className="cartPrice">${priceTotal.toFixed(2)}</h2>
+            </div>
         </div>
     )
 }

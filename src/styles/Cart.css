@@ -5,3 +5,31 @@
 
     background: var(--clr-neutral-300);
 }
+
+.cart > .cartPriceContainer {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+}
+
+.cart h2 {
+    display: inline-block;
+
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bold);
+}
+
+.cart h2.cartPrice {
+    align-self: flex-end;
+
+    font-weight: var(--fw-boldest);
+}
+
+.cart > h2:last-child > h:last-child {
+    font-weight: var(--fw-boldest);
+}
+
+.cart > .CartProductContainer {
+    border: var(--border-0_5);
+}

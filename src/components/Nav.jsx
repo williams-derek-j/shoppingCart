@@ -24,7 +24,7 @@ export default function Nav( { cart, handleShowCart } ) {
                     { cartIcon }
                     { total > 0 &&
                         <div className="bubble cartIconBubble">
-                            <span>{ total }</span>
+                            <span className={ total >= 10 ? 'doubleDigit' : ''}>{ total }</span>
                         </div>
                     }
                 </div>
