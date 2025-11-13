@@ -22,7 +22,7 @@ export default function ProductCard({ className='', id, name, price, img, inCart
                 <h2>{name}</h2>
                 <h3>${price}</h3>
                 <div className="container containerQuantity">
-                    <label htmlFor="quantity">Quantity:</label>
+                    <label htmlFor="quantity">Quantity</label>
                     <input required ref={quantity} id="quantity" type="number" className="input setProductQuantity" min="1" defaultValue={quantityCurr} onChange={() => {
                         if (inCart) {
                             handleBuy({ id: id, name: name, price: price, quantity: Number(quantity.current.value) })

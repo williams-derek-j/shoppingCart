@@ -11,7 +11,7 @@ export default function Cart({ className = '', cart, handleBuy, handleRemove }) 
             <h2 className="cartHeader">CART</h2>
             <div className="container CartProductContainer">
                 {cart.sort((a, b) => a.quantity - b.quantity).map(product => (
-                    <CartProduct className="CartProduct" key={product.id} id={product.id} name={product.name} price={product.price} quantityCurr={product.quantity} img={product.imgUrl} handleBuy={handleBuy} handleRemove={handleRemove} />
+                    <CartProduct className="CartProduct" key={product.id} id={product.id} name={product.name} price={product.price} quantityCurr={product.quantity} img={product.imgUrl} handleBuy={handleBuy} handleRemove={handleRemove}/>
                 ))}
             </div>
             <div className="cartPriceContainer">

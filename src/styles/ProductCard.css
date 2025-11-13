@@ -1,11 +1,11 @@
 .ProductCard {
-    width: min-content;
+    width: fit-content;
 
     border: var(--border-1);
     border-radius: var(--border-radius-1);
     overflow: hidden;
 
-    box-shadow: var(--shadow-025);
+    box-shadow: var(--shadow-050);
 }
 
 .ProductCard:nth-child(odd) {
@@ -26,6 +26,9 @@
 
 .ProductCard > img {
     border-bottom: var(--border-1);
+
+    max-width: 384px;
+    max-height: 384px;
 }
 
 .ProductCard .container.tongue {

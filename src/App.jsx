@@ -3,8 +3,11 @@ import { Outlet } from "react-router";
 import './styles/App.css'
 import Nav from './components/Nav';
 import Cart from "./components/Cart.jsx";
+import useFetch from "./hooks/useFetch.js";
 
 function App() {
+    const { data: inventory, isPending, error } = useFetch("http://localhost:8000/items");
+
     const [ cart, setCart ] = useState([])
     const [ showCart, setShowCart ] = useState(false);
 
@@ -36,10 +39,12 @@ function App() {
 
     return (
         <>
-            <Nav cart={ cart } handleShowCart={ handleShowCart } />
+            <Nav cart={ cart } handleShowCart={ handleShowCart }/>
             <div className="content">
-                <Outlet context={{ cartContents: cart, handleBuy, handleRemove }} />
-                { showCart && <Cart className="cart" cart={ cart } handleBuy={ handleBuy } handleRemove={ handleRemove } /> }
+                { isPending && <h2>Loading...</h2> }
+                { error && <h2>error</h2> }
+                { inventory && <Outlet context={{ inventory, cartContents: cart, handleBuy, handleRemove }}/> }
+                { showCart && <Cart className="cart" cart={ cart } handleBuy={ handleBuy } handleRemove={ handleRemove }/> }
             </div>
         </>
     )

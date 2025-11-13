@@ -6,31 +6,31 @@ export default function useFetch(url){
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        let aborted = false
+        const abortController = new AbortController()
 
-        fetch(url)
+        fetch(url, { signal: abortController.signal })
             .then(res => {
                 if (!res.ok) {
-                    throw Error("server reached but couldn't fetch data")
+                    throw Error("Connected to server but couldn't fetch data!")
                 }
                 return res.json()
             })
             .then(data => {
-                if (!aborted) {
-                    setData(data)
-                    setIsPending(false)
-                    setError(null)
-                }
+                setData(data)
+                setIsPending(false)
+                setError(null)
             })
-            .catch(error => {
-                if (!aborted) {
-                    setError(error)
+            .catch(err => {
+                if (err.name === 'AbortError') {
+                    console.log(`Fetch to ${url} aborted!`)
+                } else {
+                    setError(err)
                     setIsPending(false)
                 }
             })
 
         return () => {
-            aborted = true
+            abortController.abort()
         }
     }, [url])
 

@@ -136,10 +136,12 @@ body {
   --fs-biggest: var(--fs-1_75);
 
   --fs-body: var(--fs-1);
+  --fs-headerSmaller: var(--fs-2);
   --fs-header: var(--fs-2_5);
   --fs-headerBig: var(--fs-3_5);
   --fs-headerBigger: var(--fs-4_5);
   --fs-h2: var(--fs-1_5);
+  --fs-h3: var(--fs-1_25);
   --fs-footer: var(--fs-1_25);
 
   --gap-0_075: calc(var(--gap-1) * 0.075);
@@ -157,8 +159,8 @@ body {
   --border-0_5: var(--gap-0_075) solid var(--clr-neutral-1000);
   --border-radius-1: var(--fs-0_5) var(--fs-0_5);
 
-  --flow-spacer_0_25: var(--gap-0_5);
-  --flow-spacer_0_5: var(--gap-1);
+  --flow-spacer_0_25: calc(var(--flow-spacer) * 0.25);
+  --flow-spacer_0_5: calc(var(--flow-spacer) * 0.5);
   --flow-spacer: var(--gap-2);
 
   --aspect-portrait: 1 / 1.5;
