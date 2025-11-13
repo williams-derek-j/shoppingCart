@@ -1,0 +1,17 @@
+.CartProduct {
+    padding: var(--gap-0_5);
+
+    background: var(--clr-neutral-100);
+}
+
+.CartProduct:nth-child(odd) {
+    background: var(--clr-neutral-000);
+}
+
+.CartProduct > span {
+    display: inline-block;
+}
+
+.CartProduct > button {
+    float: right;
+}

@@ -1,0 +1,7 @@
+.cart {
+    width: 40%;
+
+    padding: var(--gap-1);
+
+    background: var(--clr-neutral-300);
+}

@@ -1,6 +1,7 @@
-import {useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
+import '../styles/CartProduct.css'
 
-export default function CartProduct({ id, name, price, quantityCurr, handleBuy, handleRemove }) {
+export default function CartProduct({ className='', id, name, price, quantityCurr, handleBuy, handleRemove }) {
     const quantity = useRef(null);
 
     useEffect(() => {
@@ -15,14 +16,14 @@ export default function CartProduct({ id, name, price, quantityCurr, handleBuy, 
     },[quantityCurr])
 
     return (
-        <div className="cart product">
-            <span>{name}: </span>
-            <span>${price} x </span>
+        <div className={`${className} flow_0_25h`}>
+            <span>{name}:</span>
+            <span>${price} x</span>
             <input required ref={quantity} id="quantity" type="number" className="input setProductQuantity" min="1" max="9" defaultValue={quantityCurr} onInput={() => {
                 handleBuy({ id: id, name: name, price: price, quantity: Number(quantity.current.value) })
             }}/>
-            <span>Subtotal: ${(quantityCurr * price).toFixed(2)} </span>
-            <button className="button removeProduct" onClick={() => {handleRemove({ id: id, name: name })}}>X</button>
+            <span>Subtotal: ${(quantityCurr * price).toFixed(2)}</span>
+            <button className="button productButton removeCartProduct" onClick={() => {handleRemove({ id: id, name: name })}}>X</button>
         </div>
     )
 }

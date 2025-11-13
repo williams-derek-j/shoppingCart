@@ -1,8 +1,65 @@
-.productCard .container.tongue {
-    padding: var(--gap-1);
+.ProductCard {
+    border: var(--border-1);
 }
 
-.productCard .container.button {
+.ProductCard:nth-child(odd) {
+    background: var(--clr-neutral-150);
+}
+
+.ProductCard:nth-child(even) {
+    background: var(--clr-neutral-200);
+}
+
+.ProductCard .container.tongue {
+    padding: var(--gap-0_75);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--gap-0_5);
+}
+
+.ProductCard .container.tongue > h2 {
+    /*margin-bottom: calc(var(--gap-0_5) * -1);*/
+
+    text-align: center;
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bolder);
+
+    background: var(--clr-neutral-050);
+    border: var(--border-1);
+    border-radius: var(--border-radius-1);
+}
+
+/*.ProductCard .container.tongue > h2:nth-child(odd) {*/
+/*    background: var(--clr-neutral-100);*/
+/*}*/
+
+/*.ProductCard .container.tongue > h2:nth-child(even) {*/
+/*    background: var(--clr-neutral-200);*/
+/*}*/
+
+.ProductCard .container.tongue > h3 {
+    font-weight: var(--fw-bold);
+}
+
+.ProductCard .container.tongue > .containerQuantity {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+}
+
+.ProductCard .container.tongue > .containerQuantity > input {
+    border-radius: var(--border-radius-1);
+
+    font-weight: var(--fw-bold);
+    text-align: center;
+
+    background: var(--clr-neutral-500);
+}
+
+.ProductCard .container.containerButton {
     width: fit-content;
 
     margin-left: auto;
@@ -12,4 +69,12 @@
     background: var(--clr-accent-500);
 
     border-radius: var(--border-radius-1);
+}
+
+button.buyProductCard, button.removeProductCard {
+    background: var(--clr-accent-500);
+
+    margin-left: auto;
+
+    border-radius: 20%;
 }

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import '../styles/ProductCard.css'
 
-export default function ProductCard({ id, name, price, img, inCart, quantityCurr, handleBuy, handleRemove }) {
+export default function ProductCard({ className='', id, name, price, img, inCart, quantityCurr, handleBuy, handleRemove }) {
     const quantity = useRef(null);
 
     useEffect(() => {
@@ -13,15 +13,15 @@ export default function ProductCard({ id, name, price, img, inCart, quantityCurr
                 quantity.current.value = quantityCurr
             }
         }
-    },[inCart, quantityCurr])
+    },[quantityCurr])
 
     return (
-        <div className="productCard">
+        <div className={`${className}`}>
             <img src={img}/>
             <div className="container tongue">
                 <h2>{name}</h2>
                 <h3>${price}</h3>
-                <div className="container quantity">
+                <div className="container containerQuantity">
                     <label htmlFor="quantity">Quantity:</label>
                     <input required ref={quantity} id="quantity" type="number" className="input setProductQuantity" min="1" max="9" defaultValue={quantityCurr} onChange={() => {
                         if (inCart) {
@@ -29,11 +29,11 @@ export default function ProductCard({ id, name, price, img, inCart, quantityCurr
                         }
                     }}/>
                 </div>
-                <div className="container button">
-                    {inCart === false && <button className="button buyProduct" onClick={() => {
+                <div className="container containerButton">
+                    {inCart === false && <button className="button productButton buyProductCard" onClick={() => {
                         handleBuy({ id: id, name: name, price: price, quantity: Number(quantity.current.value) })
                     }}>Buy</button>}
-                    {inCart === true && <button className="button removeProduct" onClick={() => {
+                    {inCart === true && <button className="button productButton removeProductCard" onClick={() => {
                         handleRemove({ id: id, name: name })
                         quantity.current.value = 1;
                     }}>X</button>}

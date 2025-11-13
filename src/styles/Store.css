@@ -1,0 +1,12 @@
+.storeInventory {
+    height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+
+    padding: var(--gap-1);
+
+    gap: var(--gap-1);
+
+    background: var(--clr-neutral-050);
+}
