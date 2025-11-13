@@ -38,7 +38,7 @@ function App() {
         <>
             <Nav cart={ cart } handleShowCart={ handleShowCart } />
             <div className="content">
-                <Outlet context={{ cartContents: cart.map((product) => { return { id: product.id, quantity: product.quantity } }), handleBuy, handleRemove }} />
+                <Outlet context={{ /*cartContents: cart.map((product) => { return { id: product.id, quantity: product.quantity } })*/ cartContents: cart, handleBuy, handleRemove }} />
                 { showCart && <Cart className="cart" cart={ cart } handleBuy={ handleBuy } handleRemove={ handleRemove } /> }
             </div>
         </>
