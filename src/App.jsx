@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Outlet } from "react-router";
 import './styles/App.css'
 import Nav from './components/Nav';
@@ -15,7 +15,7 @@ function App() {
     }
 
     function handleBuy(product) {
-        console.log('handleBuy ran, product:', product, ' cart: ', cart)
+        console.log('handleBuy ran, product:', product, ' cart (before): ', cart)
 
         const old = cart.filter((oldProduct) => oldProduct.id !== product.id)
 
@@ -23,18 +23,22 @@ function App() {
     }
 
     function handleRemove(product) {
-        console.log('handleRemove ran, product:', product, ' cart: ', cart)
+        console.log('handleRemove ran, product:', product, ' cart (before): ', cart)
 
         const filtered = cart.filter((oldProduct) => oldProduct.id !== product.id)
 
         setCart([...filtered])
     }
 
+    useEffect(() => {
+        console.log('App rendered')
+    })
+
     return (
         <>
             <Nav cart={ cart } handleShowCart={ handleShowCart } />
             <div className="content">
-                <Outlet context={{ cart, setCart, handleBuy, handleRemove }} />
+                <Outlet context={{ cartContents: cart.map((product) => { return { id: product.id, quantity: product.quantity } }), handleBuy, handleRemove }} />
                 { showCart && <Cart className="cart" cart={ cart } handleBuy={ handleBuy } handleRemove={ handleRemove } /> }
             </div>
         </>
