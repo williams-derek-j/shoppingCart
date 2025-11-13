@@ -20,6 +20,13 @@
     font-weight: var(--fw-bold);
 }
 
+.cart h2.cartHeader {
+    width: 100%;
+
+    text-align: center;
+    font-weight: var(--fw-bolder);
+}
+
 .cart h2.cartPrice {
     align-self: flex-end;
 

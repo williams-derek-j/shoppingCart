@@ -16,10 +16,10 @@ export default function CartProduct({ className='', id, name, price, quantityCur
     },[quantityCurr])
 
     return (
-        <div className={`${className} flow_0_25h`}>
+        <div className={`${className}`}>
             <span>{name}:</span>
-            <span>${price} x</span>
-            <input required ref={quantity} id="quantity" type="number" className="input setProductQuantity" min="1" max="9" defaultValue={quantityCurr} onInput={() => {
+            <span>${price}</span>
+            <input required ref={quantity} id="quantity" type="number" className="input setProductQuantity" min="1" defaultValue={quantityCurr} onInput={() => {
                 handleBuy({ id: id, name: name, price: price, quantity: Number(quantity.current.value) })
             }}/>
             <span>Subtotal: ${(quantityCurr * price).toFixed(2)}</span>

@@ -8,9 +8,9 @@ export default function Cart({ className = '', cart, handleBuy, handleRemove }) 
 
     return (
         <div className={`${className} flow_0_25`}>
-            <h2>CART:</h2>
+            <h2 className="cartHeader">CART</h2>
             <div className="container CartProductContainer">
-                {cart.map(product => (
+                {cart.sort((a, b) => a.quantity - b.quantity).map(product => (
                     <CartProduct className="CartProduct" key={product.id} id={product.id} name={product.name} price={product.price} quantityCurr={product.quantity} img={product.imgUrl} handleBuy={handleBuy} handleRemove={handleRemove} />
                 ))}
             </div>

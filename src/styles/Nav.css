@@ -16,6 +16,10 @@ nav {
     box-shadow: var(--shadow-500);
 }
 
+nav > a {
+    text-shadow: var(--text-shadow-500);
+}
+
 nav > *:not(:first-child) {
     margin-left: var(--gap-1);
 }

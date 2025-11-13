@@ -1,17 +1,51 @@
 .CartProduct {
     padding: var(--gap-0_5);
 
-    background: var(--clr-neutral-100);
+    font-weight: var(--fw-bold);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.CartProduct > * {
+    border-block-end: var(--border-0_5);
 }
 
 .CartProduct:nth-child(odd) {
     background: var(--clr-neutral-000);
 }
 
+.CartProduct:nth-child(odd) > *:nth-child(odd) {
+    background: var(--clr-neutral-050);
+}
+
+.CartProduct:nth-child(even) {
+    background: var(--clr-neutral-100);
+}
+
+.CartProduct:nth-child(even) > *:nth-child(odd) {
+    background: var(--clr-neutral-200);
+}
+
+
 .CartProduct > span {
     display: inline-block;
 }
 
+.CartProduct > input {
+    display: inline-block;
+    margin-left: 0;
+
+    width: 100%;
+
+    text-align: right;
+}
+
 .CartProduct > button {
     float: right;
+
+    padding: var(--gap-0_25);
+
+    border-block-end: 0;
+    border: var(--border-0_5);
 }

@@ -1,13 +1,28 @@
 .ProductCard {
     border: var(--border-1);
+    border-radius: var(--border-radius-1);
+
+    overflow: hidden;
 }
 
 .ProductCard:nth-child(odd) {
-    background: var(--clr-neutral-150);
+    background: var(--clr-neutral-050);
+}
+
+.ProductCard:nth-child(odd) > .container.tongue > h2 {
+    background: var(--clr-neutral-200);
 }
 
 .ProductCard:nth-child(even) {
     background: var(--clr-neutral-200);
+}
+
+.ProductCard:nth-child(even) > .container.tongue > h2 {
+    background: var(--clr-neutral-050);
+}
+
+.ProductCard > img {
+    border-bottom: var(--border-1);
 }
 
 .ProductCard .container.tongue {
@@ -26,7 +41,6 @@
     font-size: var(--fs-h2);
     font-weight: var(--fw-bolder);
 
-    background: var(--clr-neutral-050);
     border: var(--border-1);
     border-radius: var(--border-radius-1);
 }
