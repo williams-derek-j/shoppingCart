@@ -52,8 +52,6 @@
 }
 
 .Cart h2.CartPriceLabel {
-    position: absolute;
-
     text-decoration-line: underline;
 
     width: 100%;
@@ -69,4 +67,10 @@
     background: var(--clr-neutral-050);
 
     border-radius: var(--border-radius-1);
+}
+
+@media (max-width: 576px) {
+    .Cart h2.CartPrice {
+        font-size: var(--fs-h3);
+    }
 }

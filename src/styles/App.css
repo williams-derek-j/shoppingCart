@@ -13,9 +13,13 @@
 
 }
 
-@media (min-width: 0px) and (max-width: 576px) {
+@media (min-width: 0px) and (max-width: 864px) {
   .content {
     flex-direction: column !important;
+  }
+
+  .Cart {
+    width: 100% !important;
   }
 }
 
@@ -31,4 +35,10 @@
   justify-content: space-between;
 
   background-color: var(--clr-primary-600);
+}
+
+button.buttonProduct {
+  margin-left: auto;
+
+  border-radius: 20%;
 }

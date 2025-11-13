@@ -4,6 +4,9 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    flex-wrap: wrap;
+
+    max-width: 100%;
 
     padding: var(--gap-2);
 
