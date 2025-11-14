@@ -21,10 +21,10 @@ export default function ProductCard({ className='', id, name, price, img, inCart
                 <img className="img ProductCardImg" src={img}/>
             </div>
             <div className="container tongue">
-                <h2 className="ProductCardLabel">{name}</h2>
-                <h3 className="ProductCardPrice">${price}</h3>
+                <h2 className="h2 label ProductCardLabel">{name}</h2>
+                <h3 className="h3 ProductCardPrice">${price}</h3>
                 <div className="container ProductCardQuantityContainer">
-                    <label className="ProductCardQuantityLabel" htmlFor={`quantity${id}`}>Quantity:</label>
+                    <label className="label ProductCardQuantityLabel" htmlFor={`quantity${id}`}>Quantity:</label>
                     <input required ref={quantity} id={`quantity${id}`} type="number" className="input ProductCardQuantityInput" min="1" defaultValue={quantityCurr} onChange={() => {
                         if (inCart) {
                             handleBuy({ id: id, name: name, price: price, quantity: Number(quantity.current.value) })

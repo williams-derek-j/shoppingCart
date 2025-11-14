@@ -24,6 +24,10 @@
     background: var(--clr-neutral-050);
 }
 
+.ProductCard:nth-child(even) .container.tongue > h2.ProductCardLabel {
+    box-shadow: 0px 0px 2px 1px var(--clr-neutral-400) inset, 0px 0px 8px 4px var(--clr-neutral-150) inset;
+}
+
 .ProductCard > .ProductCardImgContainer {
     width: 100%;
 
@@ -60,6 +64,8 @@
 
     border: var(--border-1);
     border-radius: var(--border-radius-1);
+
+    box-shadow: 0px 0px 2px 1px var(--clr-neutral-600) inset, 0px 0px 8px 4px var(--clr-neutral-300) inset;
 }
 
 /*.ProductCard .container.tongue > h2:nth-child(odd) {*/
@@ -115,6 +121,7 @@
 
     background: var(--clr-accent-500);
 
+    border: var(--border-2dd);
     border-radius: var(--border-radius-1);
 }
 

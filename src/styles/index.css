@@ -81,8 +81,9 @@ body {
   --clr-neutral-800: hsl(34, 08%, 20%);
   --clr-neutral-700: hsl(34, 18%, 30%);
   --clr-neutral-600: hsl(34, 28%, 40%);
-  --clr-neutral-400: hsl(34, 38%, 50%);
-  --clr-neutral-500: hsl(34, 48%, 60%);
+  --clr-neutral-500: hsl(34, 38%, 50%);
+  --clr-neutral-400: hsl(34, 48%, 60%);
+  --clr-neutral-350: hsl(34, 58%, 65%);
   --clr-neutral-300: hsl(34, 58%, 70%);
   --clr-neutral-250: hsl(34, 68%, 75%);
   --clr-neutral-200: hsl(34, 68%, 80%);
@@ -162,7 +163,10 @@ body {
   --gap-5: calc(var(--gap-1) * 5);
   --gap-1: var(--fs-1);
 
+  --border-2da: var(--gap-0_25) dashed var(--clr-neutral-1000);
+  --border-2dd: var(--gap-0_25) double var(--clr-neutral-1000);
   --border-1: var(--gap-0_125) solid var(--clr-neutral-1000);
+  --border-1da: var(--gap-0_125) dashed var(--clr-neutral-1000);
   --border-0_5: var(--gap-0_075) solid var(--clr-neutral-1000);
   --border-radius-1: var(--fs-0_5) var(--fs-0_5);
 

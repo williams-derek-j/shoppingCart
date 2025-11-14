@@ -57,6 +57,14 @@ nav > a {
     align-self: center;
 }
 
+nav > a:hover {
+    color: var(--clr-accent-500);
+}
+
+nav > a:last-of-type {
+    margin-right: var(--gap-0_5);
+}
+
 /*nav > *:not(:first-child) {*/
 /*    margin-left: var(--gap-1);*/
 /*}*/
@@ -73,7 +81,7 @@ nav > *:first-child {
     font-size: var(--fs-headerBigger);
 }
 
-nav > *:last-child > .icon {
+nav > button > .icon {
     position: relative;
 
     width: var(--fs-headerBigger);
@@ -84,6 +92,13 @@ nav > *:last-child > .icon {
     background: var(--clr-neutral-050);
 
     border-radius: var(--border-radius-1);
+
+    box-shadow: var(--shadow-100);
+}
+
+nav > button > .icon:hover {
+    box-shadow: 0px 0px 1px 1px var(--clr-neutral-700) inset, 0px 0px 6px 3px var(--clr-neutral-500) inset !important;
+    /*background: var(--clr-neutral-200);*/
 }
 
 nav > *:last-child > .icon > svg {

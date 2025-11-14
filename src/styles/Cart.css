@@ -48,6 +48,7 @@
     width: 100%;
 
     text-align: center;
+    font-size: var(--fs-headerSmaller);
     font-weight: var(--fw-bolder);
 }
 

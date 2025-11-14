@@ -11,16 +11,28 @@
 
 .CartProduct > * {
     border-block-end: var(--border-0_5);
+    border-inline: var(--border-0_5);
+}
+
+.CartProduct > *:first-child {
+    border-block: var(--border-0_5);
 }
 
 .CartProduct:nth-child(odd) {
-    transform: translate3d(0, 0, 0);
     z-index: 1;
+    transform: translate3d(0, 0, 0);
+
     background: var(--clr-neutral-000);
 }
 
-.CartProduct:nth-child(odd) > *:nth-child(odd) {
+.CartProduct:nth-child(odd) > *:nth-child(odd):not(button) {
     background: var(--clr-neutral-050);
+
+    box-shadow: 0px 0px 2px 1px var(--clr-neutral-200) inset, 0px 0px 6px 3px var(--clr-neutral-150) inset;
+}
+
+.CartProduct:nth-child(odd) > button {
+    background: var(--clr-primary-200) !important;
 }
 
 .CartProduct:nth-child(even) {
@@ -32,8 +44,14 @@
     background: var(--clr-neutral-100);
 }
 
-.CartProduct:nth-child(even) > *:nth-child(odd) {
+.CartProduct:nth-child(even) > *:nth-child(odd):not(button) {
     background: var(--clr-neutral-200);
+
+    box-shadow: 0px 0px 2px 1px var(--clr-neutral-400) inset, 0px 0px 8px 4px var(--clr-neutral-200) inset;
+}
+
+.CartProduct:nth-child(even) > button {
+    background: var(--clr-primary-600) !important;
 }
 
 
@@ -41,7 +59,7 @@
     display: inline-block;
 }
 
-.CartProduct > input {
+.CartProduct > input.CartProductQuantityInput {
     display: inline-block;
     margin-left: 0;
 
@@ -51,11 +69,15 @@
     direction: rtl;
 }
 
-.CartProduct > button {
+.CartProduct > button.CartProductRemoveButton {
     float: right;
 
     padding: var(--gap-0_25);
 
     border-block-end: 0;
     border: var(--border-0_5);
+}
+
+.CartProduct > button.CartProductRemoveButton:hover {
+    background: var(--clr-highlight-500) !important;
 }

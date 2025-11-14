@@ -17,8 +17,8 @@ export default function CartProduct({ className='', id, name, price, quantityCur
 
     return (
         <div className={`${className}`}>
-            <span>{name}:</span>
-            <span>${price}</span>
+            <span className="span label CartProductLabel">{name}:</span>
+            <span className="span CartProductPrice">${price}</span>
             <input required ref={quantity} id="quantity" type="number" className="input inputProduct CartProductQuantityInput" min="1" defaultValue={quantityCurr} onInput={() => {
                 handleBuy({ id: id, name: name, price: price, quantity: Number(quantity.current.value) })
             }}/>
