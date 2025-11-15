@@ -9,12 +9,31 @@
     border-left: var(--border-1);
 
     box-shadow: var(--shadow-050);
+
+    /*position: sticky;*/
+    /*height: min-content;*/
+    /*min-height: 0;*/
+    /*top: 0;*/
+    /*right: 0;*/
 }
 
 @media (min-width: 0px) and (max-width: 576px) {
     .Cart {
         width: 100% !important;
         min-width: 0 !important;
+
+        /*max-height: 40vh;*/
+        /*overflow: scroll;*/
+    }
+}
+
+@media (min-width: 577px) {
+    .Cart {
+        position: sticky;
+        height: min-content;
+        min-height: 100vh;
+        top: 0;
+        right: 0;
     }
 }
 

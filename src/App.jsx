@@ -5,12 +5,12 @@ import Nav from './components/Nav';
 import Cart from "./components/Cart.jsx";
 import useFetch from "./hooks/useFetch.js";
 
-function App() {
+export default function App() {
     console.log('App rendered')
 
     const [ displayIsMobile , setDisplayIsMobile ] = useState(false)
 
-    const { data: inventory, isPending, error } = useFetch("http://localhost:8000/items");
+    const { data: inventory, isPending, error } = useFetch("https://fakestoreapi.com/products");
 
     const [ cart, setCart ] = useState([])
     const [ showCart, setShowCart ] = useState(false);
@@ -38,9 +38,7 @@ function App() {
     }
 
     useEffect(() => {
-        const mm = window.matchMedia("(width <= 576px")
-
-        mm.onchange = (e) => {
+        window.matchMedia("(width <= 576px").onchange = (e) => {
             if (e.matches) {
                 setDisplayIsMobile(true)
             } else {
@@ -61,11 +59,7 @@ function App() {
                 { /* or*/ }
                 { displayIsMobile && showCart && <Cart className="Cart" cart={ cart } handleBuy={ handleBuy } handleRemove={ handleRemove }/> }
                 { displayIsMobile && inventory && <Outlet context={{ inventory, cart, handleBuy, handleRemove }}/>}
-                {/*{ inventory && <Outlet context={{ inventory, cart, handleBuy, handleRemove }}/> }*/}
-                {/*{ showCart && <Cart className="Cart" cart={ cart } handleBuy={ handleBuy } handleRemove={ handleRemove }/> }*/}
             </div>
         </>
     )
 }
-
-export default App

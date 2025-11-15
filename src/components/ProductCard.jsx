@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react'
 import '../styles/ProductCard.css'
 
-export default function ProductCard({ className='', id, name, price, img, inCart, quantityCurr, handleBuy, handleRemove }) {
+export default function ProductCard({ className='', id, name, price, description, img, inCart, quantityCurr, handleBuy, handleRemove }) {
     const quantity = useRef(null);
+
+    description = `${description[0].toUpperCase()}${description.slice(1)}`; // capitalize first letter of description
 
     useEffect(() => {
         console.log('ProductCard rendered, currQ:', quantityCurr, ' inCart:', inCart)
@@ -23,6 +25,7 @@ export default function ProductCard({ className='', id, name, price, img, inCart
             <div className="container tongue">
                 <h2 className="h2 label ProductCardLabel">{name}</h2>
                 <h3 className="h3 ProductCardPrice">${price}</h3>
+                <p className="p ProductCardDescription">{description}</p>
                 <div className="container ProductCardQuantityContainer">
                     <label className="label ProductCardQuantityLabel" htmlFor={`quantity${id}`}>Quantity:</label>
                     <input required ref={quantity} id={`quantity${id}`} type="number" className="input ProductCardQuantityInput" min="1" defaultValue={quantityCurr} onChange={() => {

@@ -8,9 +8,10 @@ export default function ProductList({ className='', inventory, cart, handleBuy, 
                 <ProductCard key={product.id}
                              className="ProductCard"
                              id={product.id}
-                             name={product.name}
+                             name={product.title}
                              price={product.price}
-                             img={product.imgUrl}
+                             description={product.description}
+                             img={product.image}
                              inCart={cart.some(inCart => inCart.id === product.id)}
                              quantityCurr={cart.some(inCart => inCart.id === product.id) ?
                                  cart.filter(inCart => inCart.id === product.id)[0].quantity
