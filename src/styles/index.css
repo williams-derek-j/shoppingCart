@@ -74,6 +74,7 @@ body {
   --clr-primary-200: hsl(190, 72%, 87.5%);
   --clr-primary-100: hsl(190, 90%, 87.5%);
 
+  --clr-accent-700: hsl(0, 64%, 43%);
   --clr-accent-500: hsl(0, 82%, 61%);
 
   --clr-neutral-1000: hsl(34, 0%, 0%);
@@ -91,6 +92,19 @@ body {
   --clr-neutral-100: hsl(34, 78%, 90%);
   --clr-neutral-050: hsl(34, 78%, 95%);
   --clr-neutral-000: hsl(34, 88%, 100%);
+
+  --clr-grayscale-900: hsl(0, 0%, 10%);
+  --clr-grayscale-800: hsl(0, 0%, 20%);
+  --clr-grayscale-700: hsl(0, 0%, 30%);
+  --clr-grayscale-600: hsl(0, 0%, 40%);
+  --clr-grayscale-500: hsl(0, 0%, 50%);
+  --clr-grayscale-400: hsl(0, 0%, 60%);
+  --clr-grayscale-300: hsl(0, 0%, 70%);
+  --clr-grayscale-250: hsl(0, 0%, 75%);
+  --clr-grayscale-200: hsl(0, 0%, 80%);
+  --clr-grayscale-150: hsl(0, 0%, 85%);
+  --clr-grayscale-100: hsl(0, 0%, 90%);
+  --clr-grayscale-050: hsl(0, 0%, 95%);
 
   --clr-highlight-500: #ccff00;
 

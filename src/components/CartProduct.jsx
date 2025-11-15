@@ -22,7 +22,7 @@ export default function CartProduct({ className='', id, name, price, quantityCur
             <input required ref={quantity} id="quantity" type="number" className="input inputProduct CartProductQuantityInput" min="1" defaultValue={quantityCurr} onInput={() => {
                 handleBuy({ id: id, name: name, price: price, quantity: Number(quantity.current.value) })
             }}/>
-            <span>Subtotal: ${(quantityCurr * price).toFixed(2)}</span>
+            <span className="span CartProductSubtotal">Subtotal: ${(quantityCurr * price).toFixed(2)}</span>
             <button className="button buttonProduct buttonProductRemove CartProductButton CartProductRemoveButton" onClick={() => {handleRemove({ id: id, name: name })}}>X</button>
         </div>
     )

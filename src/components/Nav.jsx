@@ -1,10 +1,11 @@
+import { useMemo } from "react";
 import { NavLink } from 'react-router-dom';
 import '../styles/Nav.css'
 
 export default function Nav( { cart, handleShowCart } ) {
-    let total = cart.reduce((sum, product) => {
+    let total = useMemo(() => cart.reduce((sum, product) => {
         return sum += product.quantity
-    }, 0)
+    }, 0), [cart])
 
     const cartIcon = (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -19,7 +20,10 @@ export default function Nav( { cart, handleShowCart } ) {
             <NavLink to={`/`}>Store</NavLink>
             <NavLink to={`/about`}>About</NavLink>
             <NavLink to={`/contact`}>Contact</NavLink>
-            <button className="button CartToggle" onClick={() => handleShowCart()}>
+            <button className="button CartToggle" onClick={(e) => {
+                handleShowCart()
+                e.currentTarget.classList.toggle('pressed')
+            }}>
                 <div className="icon CartIcon">
                     { cartIcon }
                     { total > 0 &&

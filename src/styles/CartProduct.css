@@ -31,8 +31,12 @@
     box-shadow: 0px 0px 2px 1px var(--clr-neutral-200) inset, 0px 0px 6px 3px var(--clr-neutral-150) inset;
 }
 
+.CartProduct:nth-child(odd) > span.CartProductSubtotal {
+    background: var(--clr-grayscale-050);
+}
+
 .CartProduct:nth-child(odd) > button {
-    background: var(--clr-primary-200) !important;
+    background: var(--clr-primary-200);
 }
 
 .CartProduct:nth-child(even) {
@@ -48,6 +52,10 @@
     background: var(--clr-neutral-200);
 
     box-shadow: 0px 0px 2px 1px var(--clr-neutral-400) inset, 0px 0px 8px 4px var(--clr-neutral-200) inset;
+}
+
+.CartProduct:nth-child(even) > span.CartProductSubtotal {
+    background: var(--clr-grayscale-100);
 }
 
 .CartProduct:nth-child(even) > button {
@@ -79,5 +87,5 @@
 }
 
 .CartProduct > button.CartProductRemoveButton:hover {
-    background: var(--clr-highlight-500) !important;
+    background: var(--clr-accent-700) !important;
 }

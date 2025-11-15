@@ -6,6 +6,10 @@ import Cart from "./components/Cart.jsx";
 import useFetch from "./hooks/useFetch.js";
 
 function App() {
+    console.log('App rendered')
+
+    const [ displayIsMobile , setDisplayIsMobile ] = useState(false)
+
     const { data: inventory, isPending, error } = useFetch("http://localhost:8000/items");
 
     const [ cart, setCart ] = useState([])
@@ -20,22 +24,30 @@ function App() {
     function handleBuy(product) {
         console.log('handleBuy ran, product:', product, ' cart (before): ', cart)
 
-        const old = cart.filter((oldProduct) => oldProduct.id !== product.id)
+        const filtered = cart.filter((inCart) => inCart.id !== product.id)
 
-        setCart([...old, product])
+        setCart([...filtered, product])
     }
 
     function handleRemove(product) {
         console.log('handleRemove ran, product:', product, ' cart (before): ', cart)
 
-        const filtered = cart.filter((oldProduct) => oldProduct.id !== product.id)
+        const filtered = cart.filter((inCart) => inCart.id !== product.id)
 
         setCart([...filtered])
     }
 
     useEffect(() => {
-        console.log('App rendered')
-    })
+        const mm = window.matchMedia("(width <= 576px")
+
+        mm.onchange = (e) => {
+            if (e.matches) {
+                setDisplayIsMobile(true)
+            } else {
+                setDisplayIsMobile(false)
+            }
+        };
+    }, [])
 
     return (
         <>
@@ -43,8 +55,14 @@ function App() {
             <div className="content">
                 { isPending && <h2>Loading...</h2> }
                 { error && <h2>error</h2> }
-                { inventory && <Outlet context={{ inventory, cart, handleBuy, handleRemove }}/> }
-                { showCart && <Cart className="Cart" cart={ cart } handleBuy={ handleBuy } handleRemove={ handleRemove }/> }
+
+                { !displayIsMobile && inventory && <Outlet context={{ inventory, cart, handleBuy, handleRemove }}/> }
+                { !displayIsMobile && showCart && <Cart className="Cart" cart={ cart } handleBuy={ handleBuy } handleRemove={ handleRemove }/> }
+                { /* or*/ }
+                { displayIsMobile && showCart && <Cart className="Cart" cart={ cart } handleBuy={ handleBuy } handleRemove={ handleRemove }/> }
+                { displayIsMobile && inventory && <Outlet context={{ inventory, cart, handleBuy, handleRemove }}/>}
+                {/*{ inventory && <Outlet context={{ inventory, cart, handleBuy, handleRemove }}/> }*/}
+                {/*{ showCart && <Cart className="Cart" cart={ cart } handleBuy={ handleBuy } handleRemove={ handleRemove }/> }*/}
             </div>
         </>
     )

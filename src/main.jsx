@@ -6,6 +6,7 @@ import App from './App.jsx'
 import Store from './pages/Store.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
+
 const router = createBrowserRouter([
     {
         path: '/',
